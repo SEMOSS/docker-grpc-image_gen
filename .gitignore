@@ -25,3 +25,5 @@ env/
 # Dependency directories
 lib/
 lib64/
+
+model_files/
