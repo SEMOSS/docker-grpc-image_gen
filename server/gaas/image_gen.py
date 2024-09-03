@@ -21,6 +21,8 @@ class ImageGen:
 
         model_files_path = os.path.join(script_dir, "..", "..", "model_files")
 
+        self.model_name = model_name
+
         self.pipe = PixArtAlphaPipeline.from_pretrained(
             # If you want to download the model files dynamically, use `self.model_name` instead of the model directory below
             model_files_path,
@@ -113,7 +115,7 @@ class ImageGen:
             "num_inference_steps": int(num_inference_steps),
             "height": int(height),
             "width": int(width),
-            "model_name": self.pipe.name_or_path,
+            "model_name": self.model_name,
             "vae_model_name": (
                 "openai/consistency-decoder" if consistency_decoder else "default"
             ),

@@ -38,11 +38,11 @@ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. image_gen.pro
 
 ## Docker
 ```bash
-docker build -t grpc-server .
+docker build -t grpc-imagegen .
 ```
 
 ```bash
-docker run -p 50051:50051 grpc-server
+docker run --gpus all -p 50051:50051 --name grpc-imagegen grpc-imagegen
 ```
 
 ## PyTorch/CUDA

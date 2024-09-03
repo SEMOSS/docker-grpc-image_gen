@@ -18,8 +18,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-COPY ./model_files /model_files
-
 ENV PYTHONPATH="/app/server"
 
 EXPOSE 50051
